@@ -4,6 +4,11 @@ export class BikeDatabase {
   availableBikes: Bike[] = [];
   borrowedBikes: Bike[] = [];
 
+  constructor(availableBikes: Bike[], borrowedBikes: Bike[]){
+    this.availableBikes = availableBikes
+    this.borrowedBikes = borrowedBikes
+  }
+
   addBike(bike: Bike): boolean {
     if (this.availableBikes.indexOf(bike) === -1) {
       this.availableBikes.push(bike);
@@ -22,7 +27,7 @@ export class BikeDatabase {
   }
 
   borrowBike(memebershipPaid: boolean, bike: Bike): void {
-    if ((memebershipPaid = true)) {
+    if (memebershipPaid === true) {
       //the function checks if the memebership has been paid
       for (let availableBike of this.availableBikes) {
         if (bike === availableBike) {
@@ -30,8 +35,9 @@ export class BikeDatabase {
           this.availableBikes.splice(indexOfBike, 1);
           this.borrowedBikes.push(bike);
 
-          console.log(`You have successfully borrowed the bike ${bike.bikeId}`);
-          
+          console.log(`You have successfully borrowed the bike with the id ${bike.bikeId}`);
+          return;
+
         } else {
           console.log("This bike is not available for borrowing");
         }
@@ -44,14 +50,14 @@ export class BikeDatabase {
   returnBike(bike:Bike):void {
     for(let available of this.availableBikes){
       if(bike === available){
-        console.log("This bike has already been returned")
+        return console.log("This bike has already been returned")
       } else {
 
-        this.availableBikes.push(bike);
         let indexOfBike = this.borrowedBikes.indexOf(bike);
         this.borrowedBikes.splice(indexOfBike, 1)
+        this.availableBikes.push(bike);
 
-        console.log(`You have succesfully returned the bike ${bike.bikeId}`)
+        return console.log(`You have succesfully returned the bike ${bike.bikeId}`)
 
       }
     }
