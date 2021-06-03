@@ -1,10 +1,10 @@
 export interface BikeInterface {
-    bikeId: number,
+  bikeId: number;
 
-    /**
-     * @param {}
-     * @return {number}
-     */
+  /**
+   * @param {}
+   * @return {number}
+   */
 
-    getBikeId: () => number
+  getBikeId: () => number;
 }
