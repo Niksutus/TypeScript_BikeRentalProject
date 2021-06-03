@@ -31,6 +31,7 @@ export class BikeDatabase {
           this.borrowedBikes.push(bike);
 
           console.log(`You have successfully borrowed the bike ${bike.bikeId}`);
+          
         } else {
           console.log("This bike is not available for borrowing");
         }
@@ -49,6 +50,7 @@ export class BikeDatabase {
         this.availableBikes.push(bike);
         let indexOfBike = this.borrowedBikes.indexOf(bike);
         this.borrowedBikes.splice(indexOfBike, 1)
+
         console.log(`You have succesfully returned the bike ${bike.bikeId}`)
 
       }
