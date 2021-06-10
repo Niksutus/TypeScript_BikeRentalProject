@@ -42,9 +42,9 @@ export class BikeDatabase {
           console.log("This bike is not available for borrowing");
         }
       }
-    } else {
-      console.log("You don't currently have the right to borrow a bike")
     }
+    console.log("You don't currently have the right to borrow a bike")
+    
   }
 
   returnBike(bike:Bike):void {

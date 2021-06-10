@@ -26,8 +26,8 @@ dataBase.addBike(bike1);
 dataBase.addBike(bike2);
 dataBase.addBike(bike3);
 
-console.log("show the added bikes")
 console.log(dataBase.showAvailableBikes());
+console.log("above shows the added bikes")
 
 // Borrowing the bike2 with user1 whose membership has been paid
 
